@@ -1,10 +1,10 @@
-import { UserButton } from "@clerk/clerk-react";
+import Headers from "@/components/custom/Headers";
 
 function Home() {
   return (
     <div>
-      Home
-      <UserButton />
+      <Headers />
+      Landing screen
     </div>
   );
 }
