@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignInPage from "./auth/sign-in/index.jsx";
 import { ClerkProvider } from "@clerk/clerk-react";
 import Dashboard from "./dashboard/index.jsx";
+import Home from "./home/index.jsx";
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -16,14 +17,17 @@ if (!PUBLISHABLE_KEY) {
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
-    children:[
+    children: [
       {
-      path: "/dashboard",
-      element: <Dashboard  />
+        path: "/dashboard",
+        element: <Dashboard />,
       },
-    ]
+    ],
+  },
+  {
+    path: "/",
+    element: <Home />,
   },
   {
     path: "/auth/sign-in",
